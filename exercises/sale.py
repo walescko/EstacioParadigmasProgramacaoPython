@@ -7,7 +7,7 @@ if (quantidade < 0):
     print("quantidade inválida")
 elif (quantidade <= 10):
     valor = quantidade*unityValue
-elif (quantidade > 10 and quantidade <= 20):
+elif (quantidade <= 20):
     valor = quantidade*unityValue*(1-sale10)
 else:
     valor = quantidade*unityValue*(1-sale20)
