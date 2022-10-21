@@ -7,3 +7,10 @@ for i in range(n):
         sumEvens += numbersList[i]
 
 print(f"A soma dos pares da lista é {sumEvens}.")
+
+sumEvens = 0
+for n in numbersList:
+    if(n%2==0):
+        sumEvens += n
+
+print(f'A soma dos pares da lista é {sumEvens}!')
