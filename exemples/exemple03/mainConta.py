@@ -1,19 +1,24 @@
 from EstacioParadigmasProgramacaoPython.exemples.exemple03.clientes import Clientes
 from EstacioParadigmasProgramacaoPython.exemples.exemple03.conta import Conta
 
+
 cliente01 = Clientes(123, "Juao", "Street of Road")
 cliente02 = Clientes(456, "Mary", "Street off Road")
 
-conta01 = Conta([cliente01, cliente02], 1, 100)
+conta01 = Conta([cliente01, cliente02], 1, 2000)
 
 cliente01.infoCliente()
 cliente02.infoCliente()
 
 conta01.infoConta()
 conta01.gerarSaldo()
-conta01.depositar(1500)
-conta01.sacar(500)
-conta01.gerarSaldo()
+# conta01.depositar(1500)
+# conta01.sacar(500)
+# conta01.gerarSaldo()
+conta01.depositar(1000)
+conta01.sacar(1500)
+conta01.extrato.extrato(conta01.numero)
+
 # conta01.gerarExtrato()
 # conta01.depositar(1500)
 # conta01.sacar(600)

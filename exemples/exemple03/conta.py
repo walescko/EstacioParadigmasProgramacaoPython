@@ -1,9 +1,13 @@
+import datetime
+from EstacioParadigmasProgramacaoPython.exemples.exemple03.extrato import Extrato
+
 class Conta:
     def __init__(self, clientes, numero, saldo):
         self.clientes = clientes
         self.numero = numero
         self.saldo = saldo
-        n = len(clientes)
+        self.dataAbertura = datetime.datetime.today()
+        self.extrato = Extrato()
 
     def clientesConta(self):
         for i in self.clientes:
@@ -16,12 +20,14 @@ class Conta:
 
     def depositar(self, valor):
         self.saldo += valor
+        self.extrato.transacoes.append(['DEPOSITO', valor, "Data", datetime.datetime.today()])
 
     def sacar(self, valor):
         if self.saldo < valor:
             return False
         else:
             self.saldo -= valor
+            self.extrato.transacoes.append(['SAQUE', valor, "Data", datetime.datetime.today()])
             return True
 
     def transferirValor(self, contaDestino, valor):
@@ -30,6 +36,7 @@ class Conta:
         else:
             contaDestino.depositar(valor)
             self.saldo -= valor
+            self.extrato.transacoes.append(['TRANSFERENCIA', valor, "Data", datetime.datetime.today()])
         return "Transferência Realizada"
 
     def gerarSaldo(self):
