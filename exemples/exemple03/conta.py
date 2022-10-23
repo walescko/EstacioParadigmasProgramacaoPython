@@ -1,14 +1,15 @@
 class Conta:
-    def __init__(self, numero, cpf, nomeTitular, saldo):
+    def __init__(self, clientes, numero, saldo):
+        self.clientes = clientes
         self.numero = numero
-        self.cpf = cpf
-        self.nomeTitular = nomeTitular
         self.saldo = saldo
+        n = len(clientes)
 
     def infoConta(self):
-        print(f"Nome do Titular da conta: {self.nomeTitular}")
+        print(f'INFORMAÇÕES DA CONTA')
+        for i in self.clientes:
+            print(f'Nome: {i.nome}, CPF: {i.nome}, Endereço: {i.endereco}')
         print(f"Número da conta: {self.numero}")
-        print(f"CPF do titular da conta: {self.cpf}")
         print(f"Saldo da Conta: R$ {self.saldo}")
 
     def depositar(self, valor):
@@ -31,4 +32,4 @@ class Conta:
 
     def gerarExtrato(self):
         print('Saldo da Conta')
-        print(f'numero: {self.numero} \ncpf: {self.cpf} \nsaldo: R$ {self.saldo}')
+        print(f'Clientes: {self.clientes} \nnumero: {self.numero} \nsaldo: R$ {self.saldo}')
