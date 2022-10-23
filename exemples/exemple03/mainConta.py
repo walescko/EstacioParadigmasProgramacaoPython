@@ -1,10 +1,11 @@
 from EstacioParadigmasProgramacaoPython.exemples.exemple03.conta import Conta
 
 c1 = Conta(1, 1, "Juao", 1000)
-print(f"Nome do Titular da conta: {c1.nomeTitular}")
-print(f"Número da conta: {c1.numero}")
-print(f"CPF do titular da conta: {c1.cpf}")
-print(f"Saldo da Conta: R$ {c1.saldo}")
+c2 = Conta(2, 2, 'Mary', 500)
+
+c1.infoConta()
+c2.infoConta()
+
 c1.depostitar(300)
 saque = c1.sacar(100)
 
