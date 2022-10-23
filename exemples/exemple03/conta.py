@@ -5,10 +5,12 @@ class Conta:
         self.saldo = saldo
         n = len(clientes)
 
-    def infoConta(self):
-        print(f'INFORMAÇÕES DA CONTA')
+    def clientesConta(self):
         for i in self.clientes:
             print(f'Nome: {i.nome}, CPF: {i.nome}, Endereço: {i.endereco}')
+    def infoConta(self):
+        print(f'INFORMAÇÕES DA CONTA')
+        self.clientesConta()
         print(f"Número da conta: {self.numero}")
         print(f"Saldo da Conta: R$ {self.saldo}")
 
@@ -30,6 +32,7 @@ class Conta:
             self.saldo -= valor
         return "Transferência Realizada"
 
-    def gerarExtrato(self):
+    def gerarSaldo(self):
         print('Saldo da Conta')
-        print(f'Clientes: {self.clientes} \nnumero: {self.numero} \nsaldo: R$ {self.saldo}')
+        self.clientesConta()
+        print(f'Numero: {self.numero} \nsaldo: R$ {self.saldo}')
