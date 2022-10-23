@@ -5,6 +5,12 @@ class Conta:
         self.nomeTitular = nomeTitular
         self.saldo = saldo
 
+    def infoConta(self):
+        print(f"Nome do Titular da conta: {self.nomeTitular}")
+        print(f"Número da conta: {self.numero}")
+        print(f"CPF do titular da conta: {self.cpf}")
+        print(f"Saldo da Conta: R$ {self.saldo}")
+
     def depostitar(self, valor):
         self.saldo += valor
 
