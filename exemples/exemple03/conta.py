@@ -1,5 +1,5 @@
 class Conta:
-    def __init__(self,numero, cpf, nomeTitular, saldo):
+    def __init__(self, numero, cpf, nomeTitular, saldo):
         self.numero = numero
         self.cpf = cpf
         self.nomeTitular = nomeTitular
@@ -11,7 +11,7 @@ class Conta:
         print(f"CPF do titular da conta: {self.cpf}")
         print(f"Saldo da Conta: R$ {self.saldo}")
 
-    def depostitar(self, valor):
+    def depositar(self, valor):
         self.saldo += valor
 
     def sacar(self, valor):
@@ -21,9 +21,14 @@ class Conta:
             self.saldo -= valor
             return True
 
+    def transferirValor(self, contaDestino, valor):
+        if self.saldo < valor:
+            return "Saldo insufiente"
+        else:
+            contaDestino.depositar(valor)
+            self.saldo -= valor
+        return "Transferência Realizada"
+
     def gerarExtrato(self):
         print('Saldo da Conta')
         print(f'numero: {self.numero} \ncpf: {self.cpf} \nsaldo: R$ {self.saldo}')
-
-
-
